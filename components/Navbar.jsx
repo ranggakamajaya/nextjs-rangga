@@ -14,6 +14,11 @@ const switchMode = () => {
   setDarkMode(!darkMode);
 };
 
+const switchNav = () => {
+  setNav(!nav);
+}
+
+
 useEffect(() => {
   if (darkMode){
     localStorage.setItem("darkMode","true");
@@ -30,7 +35,7 @@ useEffect(() => {
     <div className='max-w-[1640px] mx-auto flex justify-between items-center p-4 border-b'>
       {/* Left side */}
       <div className='flex items-center'>
-        <div onClick={()=> setNav(!nav)} className='cursor-pointer mr-2'>
+        <div onClick={switchNav} className='cursor-pointer mr-2'>
           <AiOutlineMenu size={30} />
         </div>
         <h1 className='font-title flex text-xl sm:text-2xl lg:text-4xl px-2 font-bold font-italic cursor-pointer'>
@@ -72,7 +77,7 @@ useEffect(() => {
       'fixed top-0 left-0 w-[300px] h-screen z-20 duration-300 bg-white text-gray-800 dark:bg-gray-800 dark:text-gray-100' :
       'fixed top-0 left-[-100%] w-[300px] h-screen bg-white text-gray-800 dark:bg-gray-800 dark:text-gray-100 z-20 duration-300' }>
         <AiOutlineClose
-            onClick={()=> setNav(!nav)}
+            onClick={switchNav}
           size={30}
           className='absolute right-4 top-4 cursor-pointer hover:bg-gray-800 hover:text-white duration-300 dark:hover:bg-gray-200 dark:hover:text-gray-800 rounded-full'
         />
@@ -81,15 +86,15 @@ useEffect(() => {
         </h2>
         <nav>
             <ul className='flex flex-col mt-2'>
-              <Link href='/services'><li className='text-xl py-4 pl-4 flex hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-gray-800 duration-300'>
+              <Link onClick={switchNav} href='/services'><li className='text-xl py-4 pl-4 flex hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-gray-800 duration-300'>
                 <MdHomeRepairService size={25} className='mr-4' /> Services</li></Link>
-                <li className='text-xl py-4 pl-4 flex hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-gray-800 duration-300'>
+                <li onClick={switchNav} className='text-xl py-4 pl-4 flex hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-gray-800 duration-300'>
                 <BsFillPersonFill size={25} className='mr-4' /> Profile</li>
-                <li className='text-xl py-4 pl-4 flex hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-gray-800 duration-300'>
+                <li onClick={switchNav} className='text-xl py-4 pl-4 flex hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-gray-800 duration-300'>
                 <MdFavorite size={25} className='mr-4' /> Favorites</li>
-              <Link href='/contact'> <li className='text-xl py-4 pl-4 flex hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-gray-800 duration-300'>
+              <Link onClick={switchNav} href='/contact'> <li className='text-xl py-4 pl-4 flex hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-gray-800 duration-300'>
                 <RiMailSendFill size={25} className='mr-4' /> Contact Us</li></Link>
-              <Link href='/about'><li className='text-xl py-4 pl-4 flex hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-gray-800 duration-300'>
+              <Link onClick={switchNav} href='/about'><li className='text-xl py-4 pl-4 flex hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-gray-800 duration-300'>
                 <AiTwotoneCrown size={25} className='mr-4' /> About Us</li></Link>  
                 <li onClick={switchMode} className='flex md:hidden text-xl py-4 pl-4  hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-gray-800 duration-300'>
                 {darkMode ?
@@ -97,7 +102,7 @@ useEffect(() => {
                 (<span className='flex'><BsMoonStarsFill size={25} className='mr-4' />Dark Mode</span>)
                 }
                 </li>
-                <li className='text-xl py-4 pl-4 flex hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-gray-800 duration-300 absolute bottom-0 w-full'>
+                <li onClick={switchNav} className='text-xl py-4 pl-4 flex hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-gray-800 duration-300 absolute bottom-0 w-full'>
                 <RiLogoutBoxFill size={25} className='mr-4'/>Log Out</li>
             </ul>
         </nav>

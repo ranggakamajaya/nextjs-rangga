@@ -24,7 +24,7 @@ const ServicesList = () => {
 
   return (
     <div className='max-w-[1640px] m-auto px-4 py-12'>
-      <h1 className='text-gray-800 font-bold text-4xl text-center mb-4'>
+      <h1 className='font-bold text-4xl text-center mb-4'>
         Top Services Available
       </h1>
 
