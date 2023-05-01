@@ -2,8 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Front-End Website Project Using Tailwind CSS
 
-## Deployed on Vercel
-Link : industrial-mercenary.vercel.app
+## Production Mode Deployed on Vercel
+Link Website : industrial-mercenary.vercel.app
 
 ## Getting Started
 
